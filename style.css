@@ -47,7 +47,7 @@ body {
 
 .phone-app-demo {
     height: 61.8rem;
-    background: url("./images/mobile-app.jpeg") center no-repeat;
+    background: url("./mobile-app.jpeg") center no-repeat;
     flex: 1;
 }
 
